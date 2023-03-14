@@ -1,0 +1,14 @@
+on:
+  push:
+    branches:
+      - release1
+name: release-please
+jobs:
+  release-please:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: google-github-actions/release-please-action@v3
+        with:
+          release-type: node
+          default-branch: release1
+          versioning-strategy: always-bump-patch
